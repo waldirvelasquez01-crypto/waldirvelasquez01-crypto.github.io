@@ -1,249 +1,845 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.Sc. Romel Percy Melgarejo Bolivar | Perfil Profesional y Académico</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0284c7;
-            --dark: #1f2937;
-            --light: #f3f4f6;
-            --white: #ffffff;
-            --accent: #f59e0b;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .container {
-            max-width: 950px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            background-color: var(--white);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.4rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .badge {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.3rem;
-        }
-        .project-title {
-            font-weight: bold;
-            color: var(--dark);
-        }
-        .btn-verify {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-            transition: background-color 0.3s;
-        }
-        .btn-verify:hover {
-            background-color: var(--secondary);
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-            background-color: #e5e7eb;
-            margin-top: 3rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waldir Velasquez — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #a855f7;
+    --accent-dim: #7c3aed;
+    --accent-glow: rgba(168,85,247,0.15);
+    --bg: #080b14;
+    --bg2: #0d1020;
+    --bg3: #111827;
+    --border: #1e1b4b;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #334155;
+    --gold: #f59e0b;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── GRID DE FONDO ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(168,85,247,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,85,247,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap { position: relative; z-index: 1; }
+
+  /* ── NAVBAR ── */
+  nav {
+    background: rgba(8,11,20,0.95);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-kanji {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 48px 70px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    min-height: 480px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .hero-sub {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+  }
+
+  .hero-name {
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+
+  .hero-name .first {
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #f1f5f9;
+  }
+
+  .hero-name .last {
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .hero-spec {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: var(--bg2);
+  }
+
+  .hero-bio {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    max-width: 540px;
+  }
+
+  .hero-quote {
+    border-left: 3px solid var(--accent);
+    padding-left: 16px;
+    font-style: italic;
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--accent-dim); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text-muted);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid #334155;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── FOTO ── */
+  .photo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .photo-ring {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    overflow: hidden;
+    background: var(--bg3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .photo-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Avatar SVG placeholder */
+  .photo-ring svg { width: 230px; height: 230px; }
+
+  .photo-location {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* ── SECCIONES ── */
+  .section {
+    padding: 56px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .sec-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 32px;
+  }
+
+  /* ── STATS ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 20px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .stat-card:hover { border-color: var(--accent); }
+
+  .stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+    gap: 14px;
+  }
+
+  .skill-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 18px;
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .skill-icon {
+    font-size: 24px;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .skill-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+  }
+
+  .skill-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .bar-track {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* ── PROYECTOS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 18px;
+  }
+
+  .proj-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    transition: border-color 0.2s;
+  }
+
+  .proj-card:hover { border-color: var(--accent); }
+
+  .proj-card.featured {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .featured-pill {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .proj-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+
+  .proj-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 8px;
+    line-height: 1.45;
+  }
+
+  .proj-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .proj-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .proj-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    background: rgba(168,85,247,0.1);
+    border: 1px solid rgba(168,85,247,0.3);
+    padding: 3px 9px;
+    border-radius: 3px;
+  }
+
+  /* ── EXPERIENCIA ── */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    padding-top: 4px;
+  }
+
+  .exp-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 4px;
+  }
+
+  .exp-place {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .exp-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACTO ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .contact-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: border-color 0.2s;
+  }
+
+  .contact-card:hover { border-color: var(--accent); }
+
+  .contact-icon {
+    font-size: 22px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 3px;
+  }
+
+  .contact-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px; }
+    .photo-col { order: -1; }
+    .hero-name .first, .hero-name .last { font-size: 2.2rem; }
+    .section { padding: 36px 20px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .exp-item { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ── PRINT / PDF ── */
+  @media print {
+    body::before { display: none; }
+    nav { position: static; }
+    .hero { min-height: auto; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-    <header>
-        <h1>M.Sc. Romel Percy Melgarejo Bolivar</h1>
-        <p>Ingeniero Estadístico e Informático | Especialista en TI, Ciencia de Datos y Docencia Universitaria</p>
-    </header>
+  <!-- NAVBAR -->
+  <nav>
+    <a class="nav-brand" href="#">
+      <span class="nav-kanji">統</span> W. VELASQUEZ
+    </a>
+    <ul class="nav-links">
+      <li><a href="#inicio" class="active">Inicio</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        
-        <!-- SECCIÓN 1: RESUMEN EJECUTIVO -->
-        <section id="resumen">
-            <h2>📝 Resumen Profesional</h2>
-            <p>Profesional peruano de la ingeniería con competencias avanzadas en Ciencia de Datos, redes telemáticas, tecnologías Web y simulación de entornos tridimensionales. Sólido trasfondo en la investigación científica aplicada al ámbito de la salud y educación, respaldado por la dirección de proyectos y cargos de liderazgo institucional en la región Puno [CTI Vitae - CONCYTEC].</p>
-        </section>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div>
+      <div class="hero-eyebrow">[ 統 ] PORTFOLIO · DATA SCIENCE</div>
+      <div class="hero-sub">Ingeniería Estadística e Informática · UNA</div>
+      <div class="hero-name">
+        <span class="first">Waldir Yeison</span>
+        <span class="last">Velasquez Quispe</span>
+      </div>
+      <div class="hero-spec">Series Temporales · Machine Learning · Análisis Estadístico</div>
+      <div class="hero-tags">
+        <span class="hero-tag">SARIMA/GARCH</span>
+        <span class="hero-tag">Econometría</span>
+        <span class="hero-tag">Spring Boot</span>
+        <span class="hero-tag">IA Aplicada</span>
+        <span class="hero-tag">EViews</span>
+      </div>
+      <p class="hero-bio">
+        Convirtiendo datos en conocimiento a través de la estadística, los modelos predictivos y la inteligencia artificial aplicada al contexto regional andino.
+      </p>
+      <div class="hero-quote">
+        "Entre el ruido y el patrón, prefiero quedarme a observar — ahí donde los números empiezan a contar algo."
+      </div>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#proyectos">&#128193; Ver proyectos</a>
+        <a class="btn-outline" href="#contacto">&#9993; Contacto</a>
+      </div>
+    </div>
 
-        <!-- SECCIÓN 2: FORMACIÓN ACADÉMICA Y IDIOMAS (DISEÑO EN CUADRÍCULA) -->
-        <div class="grid-2">
-            <section id="educacion">
-                <h2>🎓 Formación Superior</h2>
-                <ul>
-                    <li>
-                        <strong>Magíster Scientiae en Informática</strong><br>
-                        Mención en Gerencia de TIC — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Ingeniero Estadístico e Informático</strong><br>
-                        Título Profesional — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Bachiller en Ciencias Estadísticas e Informática</strong><br>
-                        Grado Académico — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Especialidad en Mecatrónica Automotriz</strong><br>
-                        Estudios Técnicos — I.S.T. José Antonio Encinas (Puno)
-                    </li>
-                </ul>
-            </section>
+    <div class="photo-col">
+      <!--
+        INSTRUCCIONES PARA AGREGAR TU FOTO:
+        Reemplaza el bloque <svg>...</svg> de abajo por:
+        <img src="tu-foto.jpg" alt="Foto de Waldir">
+      -->
+      <div class="photo-ring">
+        <svg viewBox="0 0 230 230" xmlns="http://www.w3.org/2000/svg">
+          <rect width="230" height="230" fill="#111827"/>
+          <circle cx="115" cy="88" r="44" fill="#1e293b"/>
+          <circle cx="115" cy="86" r="36" fill="#334155"/>
+          <circle cx="115" cy="82" r="28" fill="#475569"/>
+          <ellipse cx="115" cy="82" rx="13" ry="15" fill="#64748b"/>
+          <ellipse cx="115" cy="192" rx="65" ry="48" fill="#1e293b"/>
+          <ellipse cx="115" cy="186" rx="58" ry="44" fill="#334155"/>
+        </svg>
+      </div>
+      <div class="photo-location">
+        &#128205; PUNO, PERÚ
+      </div>
+    </div>
+  </section>
 
-            <section id="idiomas">
-                <h2>🌐 Competencias Lingüísticas</h2>
-                <ul>
-                    <li><strong>Quechua:</strong> Lengua Nativa (Nivel Avanzado)</li>
-                    <li><strong>Inglés:</strong> Nivel Intermedio (Lectura y Escritura)</li>
-                    <li><strong>Portugués:</strong> Nivel Intermedio (Certificado de Suficiencia)</li>
-                </ul>
-                <br>
-                <div style="text-align: center;">
-                    <a href="https://concytec.gob.pe" target="_blank" class="btn-verify">
-                        ✓ Verificar Perfil Oficial CONCYTEC
-                    </a>
-                </div>
-            </section>
+  <!-- STATS -->
+  <section class="section">
+    <div class="sec-label">// estadísticas</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">76</div>
+        <div class="stat-label">Observaciones de tesis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Proyectos activos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Tecnologías dominadas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2026</div>
+        <div class="stat-label">Año en curso</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="section" id="habilidades">
+    <div class="sec-label">// habilidades</div>
+    <div class="sec-title">Stack tecnológico</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">&#128200;</div>
+        <div class="skill-name">R / EViews</div>
+        <div class="skill-sub">Series temporales</div>
+        <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#128013;</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-sub">ML / clustering</div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#9749;</div>
+        <div class="skill-name">Java Spring Boot</div>
+        <div class="skill-sub">Backend / MVC</div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#128451;</div>
+        <div class="skill-name">PostgreSQL</div>
+        <div class="skill-sub">BD relacional</div>
+        <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#128293;</div>
+        <div class="skill-name">Git & GitHub</div>
+        <div class="skill-sub">Control de versiones</div>
+        <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#128196;</div>
+        <div class="skill-name">LaTeX</div>
+        <div class="skill-sub">Documentación científica</div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#128202;</div>
+        <div class="skill-name">Excel Avanzado</div>
+        <div class="skill-sub">Análisis y modelos</div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">&#129302;</div>
+        <div class="skill-name">Machine Learning</div>
+        <div class="skill-sub">Clustering / supervisado</div>
+        <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <div class="sec-label">// proyectos</div>
+    <div class="sec-title">Investigación y desarrollo</div>
+    <div class="projects-grid">
+
+      <div class="proj-card featured">
+        <div class="featured-pill">★ TESIS PRINCIPAL</div>
+        <div class="proj-year">2025 — PRESENTE</div>
+        <div class="proj-title">Modelado SARIMA-GARCH del consumo eléctrico en la región Puno</div>
+        <div class="proj-desc">
+          76 observaciones mensuales (ene. 2020 – abr. 2026). Modelo SARIMA(1,1,1)(1,1,1)[12] con extensión ARCH/GARCH para heterocedasticidad. Diagnósticos Ljung-Box, AIC/BIC y pronósticos hasta abril 2027. Fuentes: ELECTROSUR ESTE, OSINERGMIN, MINEM.
         </div>
+        <div class="proj-badges">
+          <span class="proj-badge">EViews</span>
+          <span class="proj-badge">SARIMA</span>
+          <span class="proj-badge">GARCH</span>
+          <span class="proj-badge">R</span>
+          <span class="proj-badge">Excel</span>
+        </div>
+      </div>
 
-        <!-- SECCIÓN 3: EXPERIENCIA INSTITUCIONAL -->
-        <section id="experiencia">
-            <h2>💼 Experiencia Laboral e Institucional</h2>
-            <ul>
-                <li>
-                    <strong>Presidente del Capítulo de Ingenieros Estadísticos e Informáticos</strong><br>
-                    Colegio de Ingenieros del Perú — Consejo Departamental Puno
-                    <br><span class="badge">Octubre 2022 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Universitario Ordinario / Investigador</strong><br>
-                    Universidad Nacional del Altiplano Puno (UNA Puno)
-                    <br><span class="badge">2020 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Auxiliar Ordinario</strong><br>
-                    Universidad Nacional de Moquegua (UNAM) [CTI Vitae - CONCYTEC]
-                </li>
-            </ul>
-        </section>
+      <div class="proj-card">
+        <div class="proj-year">2025 — PRESENTE · INVESTIGACIÓN</div>
+        <div class="proj-title">Calibración de modelos ABM con inferencia por máxima verosimilitud</div>
+        <div class="proj-desc">
+          Estimación de parámetros de simulación de movilidad urbana a partir de trayectorias GPS georreferenciadas. Algoritmos de optimización y redacción metodológica en LaTeX.
+        </div>
+        <div class="proj-badges">
+          <span class="proj-badge">ABM</span>
+          <span class="proj-badge">MLE</span>
+          <span class="proj-badge">Python</span>
+          <span class="proj-badge">LaTeX</span>
+        </div>
+      </div>
 
-        <!-- SECCIÓN 4: PROPIEDAD INTELECTUAL -->
-        <section id="propiedad-intelectual">
-            <h2>🛠️ Registro de Software y Patentes (INDECOPI)</h2>
-            <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Soluciones tecnológicas y sistemas con derechos de autor reconocidos por el Estado Peruano:</p>
-            <ul>
-                <li>
-                    <span class="project-title">Criptologin</span> — Módulo integrable de validación de usuarios mediante token USB DNI electrónico (Reg. 31152022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">Enviromaker</span> — Software de procesamiento y generación de ambientes tridimensionales (Reg. 31132022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">GLPAK GUI</span> — Interfaz gráfica para renderizado 3D en ventanas Win GDI+ (Reg. 31122022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">Plataforma de Certificación Electrónica</span> — Desarrollo arquitectónico de software para emisión de firmas seguras (Reg. 1382017) [CTI Vitae - CONCYTEC].
-                </li>
-            </ul>
-        </section>
+      <div class="proj-card">
+        <div class="proj-year">2026 · DESARROLLO DE SOFTWARE</div>
+        <div class="proj-title">Sistema de trámite documentario institucional</div>
+        <div class="proj-desc">
+          Plataforma backend para la gestión y flujo automatizado de documentos institucionales. Arquitectura MVC completa con Spring Boot, Maven y PostgreSQL.
+        </div>
+        <div class="proj-badges">
+          <span class="proj-badge">Spring Boot</span>
+          <span class="proj-badge">Maven</span>
+          <span class="proj-badge">PostgreSQL</span>
+          <span class="proj-badge">pgAdmin 4</span>
+        </div>
+      </div>
 
-        <!-- SECCIÓN 5: PRODUCCIÓN CIENTÍFICA -->
-        <section id="investigacion">
-            <h2>🔬 Producción Científica e Investigación</h2>
-            <ul>
-                <li>
-                    <strong>Capítulo de Libro (2023):</strong> "Predicción de diabetes en mujeres mediante un modelo probabilístico basado en Redes Bayesianas" en la publicación internacional <em>O Cuidado em Saúde Baseado em Evidências</em> [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <strong>Artículo de Revista (2022):</strong> "Arquitectura pervasiva con tecnologías WebRTC híbridas para el desarrollo de un framework Modelo Vista Controlador de tiempo real" [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <strong>Tesis de Postgrado (2021):</strong> "Redes privadas virtuales multimedia y su influencia en la seguridad de la información" — Universidad Nacional del Altiplano.
-                </li>
-            </ul>
-            
-            <!-- CONTENEDOR DE ENLACES DE VERIFICACIÓN -->
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section class="section" id="experiencia">
+    <div class="sec-label">// experiencia</div>
+    <div class="sec-title">Trayectoria profesional</div>
+
+    <div class="exp-item">
+      <div class="exp-date">En curso</div>
+      <div>
+        <div class="exp-title">Estudiante investigador — Ingeniería Estadística e Informática</div>
+        <div class="exp-place">Universidad Nacional del Altiplano — Puno, Perú</div>
+        <div class="exp-desc">Formación en modelos estocásticos, econometría, análisis multivariante e inferencia avanzada, con enfoque en computación científica y estadística aplicada al contexto regional.</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">2025</div>
+      <div>
+        <div class="exp-title">Administrador general</div>
+        <div class="exp-place">Sector gastronómico / Restaurante comercial — Puno</div>
+        <div class="exp-desc">Dirección de operaciones diarias, cadena de suministros y control financiero. Liderazgo de personal operativo y optimización de inventario mediante análisis de datos para reducir mermas.</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <div class="sec-label">// contacto</div>
+    <div class="sec-title">Conectemos</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">&#128222;</div>
+        <div>
+          <div class="contact-label">Celular</div>
+          <div class="contact-value">+51 912 345 678</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#9993;</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">waldir.yeison@email.com</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#128279;</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/waldir-velasquez</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">&#128205;</div>
+        <div>
+          <div class="contact-label">Ubicación</div>
+          <div class="contact-value">Puno, Perú</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    — &copy; 2026 Waldir Yeison Velasquez Quispe · Puno, Perú —
+  </footer>
+
+</div>
+</body>
+</html>
